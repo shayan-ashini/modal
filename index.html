@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="assets/css/fontello.css">
+    <title>Modal</title>
+</head>
+<body>
+
+
+    <div class="bigbox">
+
+        <button id="btn">Veiw Modal</button>
+
+        <div class="box">
+            <div class="top-box">
+                <h2>Share modal</h2>
+                <i id="close" class="icon-cancel-circled"></i>
+            </div>
+            <div class="main-head-1">
+                <h4>share this link Via</h4>
+            </div>
+            <div class="icon">
+                <a href=""><i class="icon-facebook"></i></a>
+                <a href=""><i class="icon-twitter"></i></a>
+                <a href=""><i class="icon-instagram"></i></a>
+                <a href=""><i class="icon-whatsapp"></i></a>
+                <a href=""><i class="icon-telegram"></i></a>
+                
+            </div>
+            <div class="main-head-2">
+                <h4>Or copy link</h4>
+            </div>
+
+            <div class="last">
+                <input id="input" type="text" value="shayanasn.com">
+                <button id="copy">Copy</button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn')
+        let cls = document.getElementById('close')
+        let box = document.getElementsByClassName('box')[0]
+        let val = document.getElementById('input')
+        let copy = document.getElementById('copy')
+        btn.addEventListener('click',function(){
+            
+            box.classList.add('show')
+        })
+
+        cls.addEventListener('click',function(){
+            box.classList.remove('show')
+            copy.innerText='copy'
+
+        })
+
+        copy.addEventListener('click',function(){
+            val.select()
+            document.execCommand("copy");
+            copy.innerText='copied'
+
+        })
+
+
+    </script>
+    
+    
+</body>
+</html>
